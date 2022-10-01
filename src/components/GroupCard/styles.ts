@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-// import { TouchableOpacity } from "react-native";
 import { UsersThree } from "phosphor-react-native";
 
 export const Container = styled.TouchableOpacity`
