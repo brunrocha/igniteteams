@@ -1,18 +1,19 @@
+import { useState } from 'react';
+import { FlatList } from 'react-native';
 
 import { ButtonIcon } from '@components/ButtonIcon';
 import { Filter } from '@components/Filter';
 import { Header } from '@components/Header';
 import { Highlight } from '@components/Highlight';
 import { Input } from '@components/Input';
+import { ListEmpty } from '@components/ListEmpty';
 import { PlayerCard } from '@components/PlayerCard';
-import { useState } from 'react';
-import { FlatList } from 'react-native';
 
 import { Container, Form, HeaderList, NumbersOfPlayers } from './styles';
 
 export function Players() {
   const [team, setTeam] = useState('Time A')
-  const [players, setPlayers] = useState(['Bruno']);
+  const [players, setPlayers] = useState([]);
 
   return (
     <Container>
@@ -61,6 +62,16 @@ export function Players() {
             onRemove={() => {}}
           />
         )}
+        ListEmptyComponent={() => (
+          <ListEmpty
+            message='Não há pessoas nesse time.'
+          />
+        )}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={[
+          { paddingBottom: 100 },
+          players.length === 0 && { flex: 1}
+        ]}
       />
     </Container>
   );
