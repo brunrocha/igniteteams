@@ -12,7 +12,7 @@ export const Container = styled.TouchableOpacity<FilterStyleProps>`
   border-radius: 4px;
   margin-right: 12px;
 
-  height: 56px;
+  height: 38px;
   width: 70px;
 
   justify-content: center;
