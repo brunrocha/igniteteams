@@ -56,7 +56,10 @@ export function Players() {
         data={players}
         keyExtractor={item => item}
         renderItem={({ item }) => (
-          <PlayerCard name={item} />
+          <PlayerCard 
+            name={item} 
+            onRemove={() => {}}
+          />
         )}
       />
     </Container>
