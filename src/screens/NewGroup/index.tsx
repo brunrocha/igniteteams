@@ -8,12 +8,15 @@ import { Highlight } from "@components/Highlight";
 import { Button } from "@components/Button";
 import { Input } from "@components/Input";
 
+import { groupCreate } from "@storage/group/groupCreate";
+
 export function NewGroup() {
   const [group, setGroup] = useState('');
 
   const navigation = useNavigation();
 
-  function handleNew(){
+  async function handleNew(){
+    await groupCreate(group);
     navigation.navigate('players', { group });
   }
 
