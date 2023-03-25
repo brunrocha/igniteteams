@@ -16,8 +16,12 @@ export function NewGroup() {
   const navigation = useNavigation();
 
   async function handleNew(){
-    await groupCreate(group);
-    navigation.navigate('players', { group });
+    try {
+      await groupCreate(group);
+      navigation.navigate('players', { group });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
